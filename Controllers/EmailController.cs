@@ -3,12 +3,23 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.Mail;
 using System.Text;
 using Northwind.Models;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace Northwind.Controllers
 {
     
     public class EmailController : Controller
     {
+         // this controller depends on the NorthwindRepository //linz
+        private NorthwindContext _northwindContext; //linz
+
+         public EmailController(NorthwindContext db) //linz
+        {
+            _northwindContext = db; 
+        }
         string MailBody = "";
         string subject = "Northwind: Password Recovery";
         string mailTitle = "Northwind: Password Recovery";
@@ -19,30 +30,27 @@ namespace Northwind.Controllers
         {
             return View();
         }
+
+        string resetCode = RanNum(4);
         [HttpPost]
-        public IActionResult Recover(string toEmail)
+         
+        public IActionResult Recover(string toEmail, string resetCode)
         {
             //Email & Content 
             MailMessage message = new MailMessage(new MailAddress(fromEmail, mailTitle), new MailAddress(toEmail));
             message.Subject = subject;
-            string reSetCode = RanNum(4);
-            string userEmail = toEmail;
+        
+            ///////////////////////////////// linz
+          //  string resetCode = RanNum(4);
+            ResetPassword resetPassword = new ResetPassword
+            {
+                ResetPWemail = toEmail,   
+                ResetCode = resetCode
+            };
 
-            /////////////////////////////////  need to add these to a Db maybe not the right way 
-            // using (var ctx = new ResetContext())
-            // {
-            //     var rePW = new ResetPassword() {ResetPWemail = userEmail};
-
-            //     ctx.ResetPasswords.Add(rePW);
-
-            //     var reCode = new ResetPassword() {ResetCode = reSetCode};
-
-            //     ctx.ResetPasswords.Add(reCode);
-
-            //     ctx.SaveChanges();                
-            // }
-              
-            ////////////////////////////////
+           _northwindContext.AddResetPassword(resetPassword);
+            
+            /////////////////////////////////
 
             MailBody = "<!DOCTYPE html>" +
                               "<html> " +
@@ -50,8 +58,8 @@ namespace Northwind.Controllers
                               "<h1 style=\"color:#051a80;\">Password Recovery</h1> " +
                               "<h2 style=\"color:#051a80;\">log back in and click on " +
                               "<b> Reset Password </b></h2> " +
-                              "<h3 style=\"color:#051a80;\">enter code: " + reSetCode + " </h3> " +
-                              "<h2 style=\"color:red;\"> " + "for login: " + userEmail +
+                              "<h3 style=\"color:#051a80;\">enter code: " + resetCode + " </h3> " +
+                              "<h2 style=\"color:red;\"> " + "for login: " + toEmail +
                               " </h2> " + "</body> " + "</html>";
             message.Body = MailBody;
             message.IsBodyHtml = true;
@@ -77,7 +85,7 @@ namespace Northwind.Controllers
 
             return View();
         }
-        private string RanNum(int length)
+        public static string RanNum(int length)
         {
             Random rand = new Random();
             StringBuilder sb = new StringBuilder();

@@ -5958,11 +5958,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DEVELOPMENT\\DotnetASPCLASS\\13MOD\\Northwind-PWreset\\Northwind.csproj",
+      "projectUniqueName": "d:\\DEVELOPMENT\\DotnetASPCLASS\\13MOD\\Northwind-PWreset\\Northwind.csproj",
       "projectName": "Northwind",
-      "projectPath": "D:\\DEVELOPMENT\\DotnetASPCLASS\\13MOD\\Northwind-PWreset\\Northwind.csproj",
+      "projectPath": "d:\\DEVELOPMENT\\DotnetASPCLASS\\13MOD\\Northwind-PWreset\\Northwind.csproj",
       "packagesPath": "C:\\Users\\SLinz\\.nuget\\packages\\",
-      "outputPath": "D:\\DEVELOPMENT\\DotnetASPCLASS\\13MOD\\Northwind-PWreset\\obj\\",
+      "outputPath": "d:\\DEVELOPMENT\\DotnetASPCLASS\\13MOD\\Northwind-PWreset\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

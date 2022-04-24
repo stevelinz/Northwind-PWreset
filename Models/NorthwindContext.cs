@@ -12,6 +12,12 @@ namespace Northwind.Models
         public DbSet<Discount> Discounts { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<ResetPassword> ResetPasswords { get; set; }  //linz
+        public void AddResetPassword(ResetPassword resetPassword) //linz
+        {
+            ResetPasswords.Add(resetPassword);
+            SaveChanges();
+        }
         public void AddCustomer(Customer customer)
         {
             Customers.Add(customer);
