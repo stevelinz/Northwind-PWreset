@@ -1,0 +1,20 @@
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Northwind.Models
+{
+    public class ResetContext: DbContext 
+    {
+          protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder
+                  
+     .UseSqlServer ("Server=bitsql.wctc.edu;Database=Northwind_35_SGL_Cart;User ID=slinz;Password=000554483;");
+          
+          public DbSet<ResetPassword> ResetPasswords
+          {
+              get;
+              set;
+
+          }
+   
+   
+    }
+}

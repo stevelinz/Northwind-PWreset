@@ -1,0 +1,54 @@
+dotnet new web -f net5.0
+
+nuget.org000
+
+dotnet add package   ... 5.0.14
+
+ 
+                optionsBuilder.UseLazyLoadingProxies()
+                .UseSqlServer(@"Server=bitsql.wctc.edu; Database=A_13_SL_22097; User Id=" + user + "; Password=" + pass + ";");
+                
+                000554483
+
+
+- dotnet add package Microsoft.EntityFrameworkCore.Tools -v  5.0.14
+--------------------------------------
+- dotnet tool install -g dotnet-ef
+- dotnet tool update -g dotnet-ef
+--------------------------------------
+- dotnet ef migrations add CreateDatabase
+- dotnet ef database update
+
+-------------------------------------------------------
+
+dotnet ef migrations add CustomerEmail --context NorthwindContext
+Context Module Sub Header
+dotnet ef database update --context NorthwindContext
+
+--------------------------------------------------------------------
+
+dotnet ef migrations  add CreateDatabase --context NorthwindContext
+
+dotnet ef database update  --context NorthwindContext
+
+====================================================================================================
+
+
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 5.0.14
+
+migration 
+
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 5.0.14
+
+Data Migrations
+
+
+
+
+dotnet tool install -g dotnet-ef
+
+dotnet tool update -g dotnet-ef
+
+dotnet ef migrations add CreateDatabase
+
+dotnet ef database update

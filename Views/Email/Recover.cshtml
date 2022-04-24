@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Password Recovery";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Password Recovery</h1>
+   
+
+    @using (Html.BeginForm("Recover", "Email", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="toEmail" />
+            </div>
+            <div class="form-group col-md-6">
+                <input type="submit" value="Send Email" />
+            </div>
+        </div>
+    }
+    @if (ViewBag.EmailSentMessage != null)
+    {
+        <div class="bg-success">
+            <label>@ViewBag.EmailSentMessage</label>
+        </div>
+    }
+</div>
