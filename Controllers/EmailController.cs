@@ -28,7 +28,7 @@ namespace Northwind.Controllers
             string reSetCode = RanNum(4);
             string userEmail = toEmail;
 
-            /////////////////////////////////
+            /////////////////////////////////  need to add these to a Db maybe not the right way 
             // using (var ctx = new ResetContext())
             // {
             //     var rePW = new ResetPassword() {ResetPWemail = userEmail};
