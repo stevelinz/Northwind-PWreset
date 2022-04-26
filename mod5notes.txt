@@ -27,9 +27,17 @@ dotnet ef database update --context NorthwindContext
 
 --------------------------------------------------------------------
 
+
+
 dotnet ef migrations  add CreateDatabase --context NorthwindContext
 
 dotnet ef database update  --context NorthwindContext
+
+=========================================
+
+dotnet ef migrations  add CreateDatabase --context AppIdentityDbContext
+
+dotnet ef database update  --context AppIdentityDbContext
 
 ====================================================================================================
 

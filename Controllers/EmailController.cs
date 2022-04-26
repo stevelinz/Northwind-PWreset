@@ -13,54 +13,51 @@ namespace Northwind.Controllers
     
     public class EmailController : Controller
     {
+        private static string reSetCode = "";
          // this controller depends on the NorthwindRepository //linz
         private NorthwindContext _northwindContext; //linz
 
-         public EmailController(NorthwindContext db) //linz
-        {
-            _northwindContext = db; 
+        ///////////////////////////////////
+        public EmailController(NorthwindContext db) => _northwindContext = db;
+        public IActionResult ResetPassword() => View(_northwindContext.ResetPasswords.OrderBy(r => r.ResetPWemail));
+        public IActionResult Index(int id){
+            ViewBag.id = id;
+            return View(_northwindContext.ResetPasswords.OrderBy(c => c.ResetPWemail));
         }
+
+
         string MailBody = "";
         string subject = "Northwind: Password Recovery";
         string mailTitle = "Northwind: Password Recovery";
         string fromEmail = "NWRecoveryWCTC@outlook.com";
         string fromEmailPassword = "ASzxc12#";
         
+       
         public IActionResult Recover()
         {
             return View();
         }
 
-        string resetCode = RanNum(4);
+
         [HttpPost]
          
-        public IActionResult Recover(string toEmail, string resetCode)
+        public IActionResult Recover(string toEmail)  // linz 
         {
             //Email & Content 
             MailMessage message = new MailMessage(new MailAddress(fromEmail, mailTitle), new MailAddress(toEmail));
             message.Subject = subject;
         
-            ///////////////////////////////// linz
-          //  string resetCode = RanNum(4);
-            ResetPassword resetPassword = new ResetPassword
-            {
-                ResetPWemail = toEmail,   
-                ResetCode = resetCode
-            };
-
-           _northwindContext.AddResetPassword(resetPassword);
-            
-            /////////////////////////////////
-
+             reSetCode = RanNum(4);
+           
             MailBody = "<!DOCTYPE html>" +
                               "<html> " +
                               "<body style=\"background -color:#ff7f26;text-align:center;\"> " +
                               "<h1 style=\"color:#051a80;\">Password Recovery</h1> " +
                               "<h2 style=\"color:#051a80;\">log back in and click on " +
-                              "<b> Reset Password </b></h2> " +
-                              "<h3 style=\"color:#051a80;\">enter code: " + resetCode + " </h3> " +
-                              "<h2 style=\"color:red;\"> " + "for login: " + toEmail +
-                              " </h2> " + "</body> " + "</html>";
+                              "<b> Change Password </b></h2> " +
+                              "<h3 style=\"color:#051a80;\">enter code: " + reSetCode + " </h3> " +
+                              "<h2 style=\"color:red;\"> " + "for login: " + toEmail + "</h2>" +
+                              "</body> " + "</html>";
             message.Body = MailBody;
             message.IsBodyHtml = true;
 
@@ -82,9 +79,20 @@ namespace Northwind.Controllers
             smtp.Send(message);
 
             ViewBag.EmailSentMessage = "Email sent successfully";
+            
+            ResetPassword resetPw = new ResetPassword  // linz
+            {
+                    ResetPWemail = toEmail,
+                
+                    ResetCode = reSetCode
+            };
 
+            _northwindContext.AddResetPassword(resetPw);
+            
             return View();
+       
         }
+
         public static string RanNum(int length)
         {
             Random rand = new Random();

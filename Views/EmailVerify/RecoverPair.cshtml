@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Password Reset Verifcation";
+}
+
+<div class="text-left">
+    <h1 class="display-4">Password Reset Verifcation</h1>
+   
+
+    @using (Html.BeginForm("RecoverPair", "EmailVerify", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="toEmail">Enter Email</label>
+                <input type="text" class="form-control" name="toEmail" /><br>
+                <label for="codeVerifyTest">Enter 4-Digit Code</label>
+                <input type="text" class="form-control" name="codeVerifyTest" /><br>
+                <input type="submit" value="Send Email" />
+            </div>
+        </div>
+    }
+    @if (ViewBag.EmailSentMessage != null)
+    {
+        <div class="bg-success">
+            <label>@ViewBag.EmailSentMessage</label>
+        </div>
+    }
+</div>

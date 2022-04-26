@@ -15644,6 +15644,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\DEVELOPMENT\\DotnetASPCLASS\\13MOD\\Northwind-PWreset\\Views\\EmailVerify\\RecoverPair.cshtml",
+      "TargetPath": "Views\\EmailVerify\\RecoverPair.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\DEVELOPMENT\\DotnetASPCLASS\\13MOD\\Northwind-PWreset\\Views\\Account\\Login.cshtml",
       "TargetPath": "Views\\Account\\Login.cshtml",
       "FileKind": "mvc"
