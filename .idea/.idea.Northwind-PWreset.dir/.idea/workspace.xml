@@ -7,33 +7,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="251bab6c-5879-481f-9c17-570e323f4181" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Controllers/APIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/APIController.cs" afterDir="false" />
+    <list default="true" id="abc2df22-7d57-48f3-9c46-8bff6a6bcd21" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Northwind-PWreset.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Northwind-PWreset.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Northwind-PWreset/config/applicationhost.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Northwind-PWreset/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Northwind-PWreset/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CustomerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CustomerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/EmailController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmailController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/EmailVerifyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EmailVerifyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/NorthwindContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/NorthwindContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/ResetPassword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ResetPassword.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Northwind.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Northwind.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Email/Recover.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Email/Recover.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/EmailVerify/RecoverPair.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/EmailVerify/RecoverPair.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Northwind.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Northwind.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Northwind.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Northwind.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Northwind.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Northwind.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Northwind.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Northwind.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/Northwind.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/Northwind.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mod5notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mod5notes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.RazorCoreGenerate.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Northwind.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Email/Recover.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Email/Recover.cshtml.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/EmailVerify/RecoverPair.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/EmailVerify/RecoverPair.cshtml.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Shared/_Layout.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/Razor/Views/Shared/_Layout.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/project.razor.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/project.razor.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/Northwind.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/Northwind.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/refint/Northwind.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/refint/Northwind.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Northwind.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Northwind.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Release/net5.0/Northwind.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net5.0/Northwind.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Release/net5.0/Northwind.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net5.0/Northwind.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,21 +56,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a646a1b69a6b46959f2b93d08bf1d8f71bcf88/C/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
-  <component name="ProjectId" id="28G0nrlVc3XB5lIByLxRptst2iR" />
+  <component name="ProjectId" id="28WHTWi9sX1QKGKlv8CaCYGgbBB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.59657145" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
+    <property name="DatabaseDriversLRU" value="sqlserver" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="XThreadsFramesViewSplitterKey" value="0.29338446" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -87,22 +95,15 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="251bab6c-5879-481f-9c17-570e323f4181" name="Changes" comment="" />
-      <created>1650827787801</created>
+      <changelist id="abc2df22-7d57-48f3-9c46-8bff6a6bcd21" name="Changes" comment="" />
+      <created>1651325432268</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1650827787801</updated>
-      <workItem from="1650827791670" duration="597000" />
-      <workItem from="1650848442435" duration="12570000" />
-      <workItem from="1650905653097" duration="283000" />
-      <workItem from="1650910299733" duration="4062000" />
-      <workItem from="1650921544392" duration="127000" />
-      <workItem from="1650939776433" duration="123000" />
-      <workItem from="1650975699214" duration="27000" />
-      <workItem from="1650975868734" duration="152000" />
-      <workItem from="1650978053003" duration="185000" />
-      <workItem from="1650980928362" duration="313000" />
-      <workItem from="1650992107995" duration="109000" />
+      <updated>1651325432268</updated>
+      <workItem from="1651325444912" duration="5568000" />
+      <workItem from="1651331561462" duration="47000" />
+      <workItem from="1651331940139" duration="384000" />
+      <workItem from="1651336141801" duration="60000" />
     </task>
     <servers />
   </component>
@@ -112,18 +113,6 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

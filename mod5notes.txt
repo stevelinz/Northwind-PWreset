@@ -41,6 +41,14 @@ dotnet ef database update  --context AppIdentityDbContext
 
 ====================================================================================================
 
+dotnet ef migrations  add sp_PasswordValidate --context NorthwindContext
+
+dotnet ef database update  --context NorthwindContext
+
+
+
+=========================================================================
+
 
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 5.0.14
 

@@ -51,12 +51,12 @@ namespace Northwind.Controllers
            
             MailBody = "<!DOCTYPE html>" +
                               "<html> " +
-                              "<body style=\"background -color:#ff7f26;text-align:center;\"> " +
-                              "<h1 style=\"color:#051a80;\">Password Recovery</h1> " +
-                              "<h2 style=\"color:#051a80;\">log back in and click on " +
-                              "<b> Change Password </b></h2> " +
-                              "<h3 style=\"color:#051a80;\">enter code: " + reSetCode + " </h3> " +
-                              "<h2 style=\"color:red;\"> " + "for login: " + toEmail + "</h2>" +
+                              "<body style=\"background -color:#ff7f26;text-align:left;\"> " +
+                              "<h2 style=\"color:#051a80;\">Password Recovery and Information Update</h2> " +
+                              "<h2 style=\"color:#051a80;\">Please log back in to Northwind to" +
+                              "<b> verify your account. <br> You will provide both your: <br></b></h2> " +
+                              "<h3 style=\"color:#051a80;\">4-digit verification code: " + reSetCode + " </h3> " +
+                              "<h2 style=\"color:red;\"> " + "and Email of record: " + toEmail + "</h2>" +
                               "</body> " + "</html>";
             message.Body = MailBody;
             message.IsBodyHtml = true;

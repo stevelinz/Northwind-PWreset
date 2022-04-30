@@ -5,8 +5,10 @@ using System.Text;
 using Northwind.Models;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Data.SqlClient;
 
 namespace Northwind.Controllers
 {
@@ -46,16 +48,17 @@ namespace Northwind.Controllers
             MailMessage message = new MailMessage(new MailAddress(fromEmail, mailTitle), new MailAddress(toEmail));
             message.Subject = subject;
         
-           ////////////////////  new behavior
            
             MailBody = "<!DOCTYPE html>" +
                               "<html> " +
-                              "<body style=\"background -color:#ff7f26;text-align:center;\"> " +
-                              "<h1 style=\"color:#051a80;\">Northwind: Password Reset Verification</h1> " +
-                              "<h2 style=\"color:#051a80;\">log back in and " +
-                              "<b> Verify Code and Email </b></h2> " +
-                              "<h3 style=\"color:#051a80;\">enter code: " + codeVerifyTest +  " </h3> " +                    
-                              "<h2 style=\"color:red;\"> " + "for login: " + toEmail + "</h2>" +                           
+                              "<body style=\"background -color:#ff7f26;text-align:left;\"> " +
+                              "<h2 style=\"color:#051a80;\">Northwind: Password Reset Verification</h2></br> " +
+                              "<h2 style=\"color:#051a80;\">The verification data entered was " +
+                              "<h3 style=\"color:#051a80;\">4-digit numeric code: " + codeVerifyTest +  " </h3></br> " +                    
+                              "<h3 style=\"color:red;\"> " + "Email of record: " + toEmail + "</h3>" + "</br>" + 
+                              "If this information is correct, please proceed to the </br> Northwind Register page " +
+                              "and re-register your company"+ "</br></br>" +
+                              "If the information is incorrect, please re-apply </br> for a new 4-digit numeric verification code " +                          
                               "</body> " + "</html>";
             message.Body = MailBody;
             message.IsBodyHtml = true;
@@ -88,8 +91,22 @@ namespace Northwind.Controllers
 
             _northwindContext.AddResetComparePassword(resetPwVerify);
             
+           
+                Get_northwindContext(toEmail);
+
+            /////////////////////////////
+               
             return View();
        
+        }
+
+        private NorthwindContext Get_northwindContext(string toEmail)
+        {
+
+            _northwindContext.Database.ExecuteSqlRawAsync("sp_PasswordValidate {0}", toEmail);
+
+            return _northwindContext;
+
         }
 
     }

@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Controllers",
-    "\\Models"
+    "\\Controllers"
   ],
-  "SelectedNode": "\\Models\\UserViewModel.cs",
+  "SelectedNode": "\\Controllers\\EmailVerifyController.cs",
   "PreviewInSolutionExplorer": false
 }

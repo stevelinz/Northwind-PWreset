@@ -1,26 +1,40 @@
 @{
     ViewData["Title"] = "Password Recovery";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Password Recovery</h1>
+<form method="post" asp-action="Recover">
+    <div class="text-Left">
+        <span><h3>
+            If you have lost or want to reset your password, 
+            this link will send an email <br> with the 4-digit code 
+            you will use to verify your identity. </h3><br>
+            <h4>Maintaining accurate information about 
+                our Customers and Vendor is important to us at 
+                <i class="far fa-compass"></i> Northwind.<br><br>
+               <i> We revalidate to ensure your information with us is current, 
+                ensuring prompt Communication and Service. </i>
+            </h4> 
+        </span>
+    
+    <div asp-validation-summary="All" style="color:red;"></div>
+    <h3 class="display-5">Password Recovery and Contact Information Maintenance</h3>
    
 
     @using (Html.BeginForm("Recover", "Email", FormMethod.Post))
     {
         <div class="row">
             <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="toEmail" />
+                <input type="email" class="form-control" name="toEmail" 
+                class="form-control" placeholder="Email" required />
             </div>
-            <div class="form-group col-md-6">
-                <input type="submit" value="Send Email" />
-            </div>
-        </div>
+        </div>    
     }
     @if (ViewBag.EmailSentMessage != null)
     {
-        <div class="bg-success">
+        <div>
             <label>@ViewBag.EmailSentMessage</label>
         </div>
     }
-</div>
+        <button type="submit" class="btn btn-outline-primary">Send Email</button>
+
+    </div>
+</form>

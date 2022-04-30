@@ -7,6 +7,11 @@ namespace Northwind.Models
     {
         public NorthwindContext(DbContextOptions<NorthwindContext> options) : base(options) { }
 
+        public NorthwindContext()
+        {
+           
+        }
+
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Discount> Discounts { get; set; }

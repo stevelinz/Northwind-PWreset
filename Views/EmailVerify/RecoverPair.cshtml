@@ -5,22 +5,35 @@
 <div class="text-left">
     <h1 class="display-4">Password Reset Verifcation</h1>
    
+     <span><h3>
+            From the email we sent enter with the 4-digit code to verify your identity. </h3><br>
+
+            If you did not receive an email go back to the 
+             <a href="\Email\Recover">Password Reset Code Page</a>  <br> <br>
+
+            <h4>Maintaining accurate information about 
+                our Customers and Vendor is important to us at 
+                <i class="far fa-compass"></i> Northwind.<br><br>
+                  <i> We revalidate to ensure your information with us is current, 
+                ensuring prompt Communication and Service. </i></br> </br>
+            </h4> 
+        </span>
 
     @using (Html.BeginForm("RecoverPair", "EmailVerify", FormMethod.Post))
     {
         <div class="row">
             <div class="form-group col-md-6">
                 <label for="toEmail">Enter Email</label>
-                <input type="text" class="form-control" name="toEmail" /><br>
+                <input type="text" class="form-control" name="toEmail" required /><br>
                 <label for="codeVerifyTest">Enter 4-Digit Code</label>
-                <input type="text" class="form-control" name="codeVerifyTest" /><br>
+                <input type="text" class="form-control" name="codeVerifyTest" required /><br>
                 <input type="submit" value="Send Email" />
             </div>
         </div>
     }
     @if (ViewBag.EmailSentMessage != null)
     {
-        <div class="bg-success">
+        <div>
             <label>@ViewBag.EmailSentMessage</label>
         </div>
     }
