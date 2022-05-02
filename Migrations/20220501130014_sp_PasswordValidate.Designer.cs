@@ -10,7 +10,7 @@ using Northwind.Models;
 namespace Northwind.Migrations
 {
     [DbContext(typeof(NorthwindContext))]
-    [Migration("20220430161421_sp_PasswordValidate")]
+    [Migration("20220501130014_sp_PasswordValidate")]
     partial class sp_PasswordValidate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

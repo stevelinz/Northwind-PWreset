@@ -1,3 +1,5 @@
+using System.Reflection.Metadata;
+using System.Reflection.Emit;
 using System;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mail;
@@ -6,21 +8,32 @@ using Northwind.Models;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
+using System.Threading.Tasks;
+
+
 
 namespace Northwind.Controllers
 {
    
     public class EmailVerifyController : Controller
     {
-           string codeVerifyTest = "0000";
+         //  string codeVerifyTest = "0000";
          // this controller depends on the NorthwindRepository 
         private NorthwindContext _northwindContext; 
+        private AppIdentityDbContext _appIdentityDbContext;
+
 
         ///////////////////////////////////
-        public EmailVerifyController(NorthwindContext db) => _northwindContext = db;
+        public EmailVerifyController(NorthwindContext db, AppIdentityDbContext appIdentityDbContext)
+        {
+            _northwindContext = db;
+            _appIdentityDbContext = appIdentityDbContext;
+        }
+
         public IActionResult ResetComparePassword() => View(_northwindContext.ResetComparePasswords.OrderBy(r => r.ResetComparePWemail));
         public IActionResult Index(int id){
             ViewBag.id = id;
@@ -40,9 +53,10 @@ namespace Northwind.Controllers
             return View();
         }
 
+
         [HttpPost]
          
-        public ViewResult RecoverPair(string toEmail, string codeVerifyTest ) 
+        public async Task<ViewResult> RecoverPairAsync(string toEmail, string codeVerifyTest ) 
         {
             //Email & Content 
             MailMessage message = new MailMessage(new MailAddress(fromEmail, mailTitle), new MailAddress(toEmail));
@@ -90,23 +104,49 @@ namespace Northwind.Controllers
             };
 
             _northwindContext.AddResetComparePassword(resetPwVerify);
+                     
             
-           
-                Get_northwindContext(toEmail);
+            int found = 0;
+            
+            int test1 = await _northwindContext.Database.ExecuteSqlRawAsync($"select * "
+ 
+           +" FROM Northwind_35_SGL_FINAL.[dbo].ResetPasswords "
+           +" LEFT JOIN Northwind_35_SGL_FINAL.[dbo].ResetComparePasswords "
+           +" ON Northwind_35_SGL_FINAL.[dbo].ResetPasswords.ResetPWemail = Northwind_35_SGL_FINAL.[dbo].ResetComparePasswords.ResetComparePWemail "
+           +" WHERE Northwind_35_SGL_FINAL.[dbo].ResetComparePasswords.ResetComparePWemail = ResetPWemail ");
 
-            /////////////////////////////
+           if(test1 == -1){
+                found = found + 1;
+           }
+
+           int test2 = await _northwindContext.Database.ExecuteSqlRawAsync($"select * "
+ 
+           +" FROM Northwind_35_SGL_FINAL.[dbo].ResetPasswords "
+           +" LEFT JOIN Northwind_35_SGL_FINAL.[dbo].ResetComparePasswords "
+           +" ON Northwind_35_SGL_FINAL.[dbo].ResetPasswords.ResetCode = Northwind_35_SGL_FINAL.[dbo].ResetComparePasswords.ResetCompareCode "
+           +" WHERE Northwind_35_SGL_FINAL.[dbo].ResetComparePasswords.ResetComparePWemail = ResetPWemail ");
+
+           if(test2 == -1){
+                found = found + 1;
+           }
+
+             if(found == 2)
+             {
+                   int result0 = await _northwindContext.Database
+                   .ExecuteSqlRawAsync($"delete from [Northwind_35_SGL_FINAL].[dbo].[Customers] where email = @p0",toEmail); 
+                   int result1 = await _northwindContext.Database
+                   .ExecuteSqlRawAsync($"delete from [Northwind_35_SGL_FINAL].[dbo].[ResetComparePasswords] where ResetComparePWemail = @p0",toEmail);
+                   int result2 = await _northwindContext.Database
+                   .ExecuteSqlRawAsync($"delete from [Northwind_35_SGL_FINAL].[dbo].[ResetPasswords] where ResetPWemail = ResetPWemail");
+                   int result3 = await _appIdentityDbContext.Database
+                   .ExecuteSqlRawAsync($"delete from [Identity_35_SGL_FINAL].[dbo].[AspNetUsers] where email = @p0",toEmail); 
+                 
+             }
+            found = 0;
+
                
             return View();
        
-        }
-
-        private NorthwindContext Get_northwindContext(string toEmail)
-        {
-
-            _northwindContext.Database.ExecuteSqlRawAsync("sp_PasswordValidate {0}", toEmail);
-
-            return _northwindContext;
-
         }
 
     }
